@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import './style.css'; // Import custom styles
+import React from 'react';
+import Filterbar from './Components/Filterbar';
+import Navbar from './Components/Navbar';
+import { TaskProvider } from './Context/TaskContext';
+import Tasks from "./Components/TaskList"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <TaskProvider>
+                <Navbar />
+                <Filterbar />
+                <Tasks />
+            </TaskProvider>
+        </>
+    );
 }
 
 export default App;
